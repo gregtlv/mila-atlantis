@@ -172,7 +172,7 @@ hr {
   padding: 14px 50px;
   background-color: #fbe900;
   color: #030303;
-  font-family: "Montserrat-Regular", sans-serif;
+  font-family: "Montserrat-Regular", sans-serif, sans-serif;
   font-weight: 800;
   text-transform: uppercase; }
 
@@ -387,7 +387,7 @@ hr {
     box-shadow: 0 9px 0px 0px #fdfdfd, 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
     width: 100%; }
   .offers__card .card__body {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 black;
     margin-top: -2px;
     padding-top: 20px;
     padding-bottom: 25px;
@@ -419,7 +419,7 @@ hr {
     padding: 14px 50px;
     background-color: #fbe900;
     color: #030303;
-    font-family: "Montserrat-Regular", sans-serif;
+    font-family: "Montserrat-Regular", sans-serif, sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     background-color: #f2da39;
@@ -442,7 +442,7 @@ hr {
     box-shadow: 0 9px 0px 0px #fdfdfd, 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
     width: 100%; }
   .offers__card__center .card__body {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 black;
     margin-top: -2px;
     padding-top: 20px;
     padding-bottom: 25px;
@@ -474,7 +474,7 @@ hr {
     padding: 14px 50px;
     background-color: #fbe900;
     color: #030303;
-    font-family: "Montserrat-Regular", sans-serif;
+    font-family: "Montserrat-Regular", sans-serif, sans-serif;
     font-weight: 800;
     text-transform: uppercase;
     background-color: #f2da39;
@@ -497,7 +497,7 @@ hr {
   clip-path: polygon(100% 0, 0 0, 50% 100%);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 black;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   background-color: #fdfdfd;

@@ -29,10 +29,10 @@ p, li, ul {
   margin: 0 auto; }
 
 .header {
-  width: 100%;
   height: 834px;
   background: #00a4ff;
   color: white;
+  width: 100%;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -52,7 +52,7 @@ p, li, ul {
 
 .header__top {
   background-color: rgba(0, 0, 0, 0.39);
-  font-family: "Montserrat-Regular", sans-serif;
+  font-family: "Montserrat-Regular", sans-serif, sans-serif;
   padding-top: 25px;
   padding-bottom: 0px;
   transition: padding-top 0.5s, padding-bottom 0.5s; }
@@ -163,7 +163,7 @@ hr {
   padding: 14px 50px;
   background-color: #fbe900;
   color: #030303;
-  font-family: "Montserrat-Regular", sans-serif;
+  font-family: "Montserrat-Regular", sans-serif, sans-serif;
   font-weight: 800;
   text-transform: uppercase; }
 
@@ -180,7 +180,7 @@ hr {
 
 .main__service__subtitle {
   font-size: 2em;
-  font-family: "Montserrat-Regular", sans-serif;
+  font-family: "Montserrat-Regular", sans-serif, sans-serif;
   text-align: center;
   padding-bottom: 70px; }
 
@@ -219,7 +219,7 @@ hr {
     padding-right: 40px; }
   .main__service__item h3 {
     font-size: 1.1em;
-    font-family: "Montserrat-Regular", sans-serif;
+    font-family: "Montserrat-Regular", sans-serif, sans-serif;
     font-weight: 800;
     padding-bottom: 15px; }
   .main__service__item p {
@@ -301,7 +301,7 @@ hr {
       border-radius: 4px;
       background-color: #fbe900;
       color: #030303;
-      font-family: "Montserrat-Regular", sans-serif;
+      font-family: "Montserrat-Regular", sans-serif, sans-serif;
       font-weight: 800;
       text-transform: uppercase; }
       .main__blog__post .main__blog__post__content .post__button span {
@@ -386,8 +386,7 @@ hr {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  /* background-color: #00a4ff; */
-  background-size: cover;
+  /* background-color: $light-blue; */
   /* background-image: url(../img/offers/bg_1600_img.jpg); */
   position: relative;
   z-index: 1; }
@@ -441,17 +440,17 @@ hr {
     padding-bottom: 25px;
     padding-left: 5%;
     padding-right: 5%;
-    /* background-color: #fdfdfd; */
+    background-color: #fdfdfd;
     text-align: center;
     color: #030303;
     height: 100%; }
   .offers__card .card__trip__duration {
-    font-family: "Montserrat-Regular", sans-serif;
+    font-family: "Montserrat-Regular", sans-serif, sans-serif;
     font-weight: 500;
     font-size: 1.2em; }
   .offers__card .card__city__destination {
     font-size: 1.1em;
-    font-family: "Montserrat-Regular", sans-serif;
+    font-family: "Montserrat-Regular", sans-serif, sans-serif;
     font-weight: 800;
     font-family: "Montserrat-ExtraBold";
     font-weight: 500;
@@ -466,12 +465,11 @@ hr {
   .offers__card .card__purchase__button {
     border-radius: 4px;
     padding: 14px 50px;
-    background-color: #fbe900;
+    background-color: #f2da39;
     color: #030303;
     font-family: "Montserrat-Regular", sans-serif;
     font-weight: 800;
     text-transform: uppercase;
-    background-color: #f2da39;
     padding: 14px 0px;
     margin: 0 auto;
     width: 65%; }
@@ -501,13 +499,11 @@ hr {
     text-align: center;
     color: #030303; }
   .offers__card__center .card__trip__duration {
-    font-family: "Montserrat-Regular", sans-serif;
+    font-family: "Montserrat-Regular", sans-serif, sans-serif;
     font-weight: 500;
     font-size: 1.2em; }
   .offers__card__center .card__city__destination {
     font-size: 1.1em;
-    font-family: "Montserrat-Regular", sans-serif;
-    font-weight: 800;
     font-family: "Montserrat-ExtraBold";
     font-weight: 500;
     font-size: 1.5em;
@@ -521,12 +517,11 @@ hr {
   .offers__card__center .card__purchase__button {
     border-radius: 4px;
     padding: 14px 50px;
-    background-color: #fbe900;
+    background-color: #f2da39;
     color: #030303;
     font-family: "Montserrat-Regular", sans-serif;
     font-weight: 800;
     text-transform: uppercase;
-    background-color: #f2da39;
     padding: 14px 0px;
     margin: 0 auto;
     width: 65%; }

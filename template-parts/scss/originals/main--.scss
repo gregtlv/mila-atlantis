@@ -52,13 +52,13 @@ $secondary-font-bold: $monserrat-exbold;
     line-height: 25px;
   }
 
-  @mixin small-title () {
+  @mixin small-title() {
     font-size: 1.1em;
     font-family: $secondary-font;
     font-weight: 800;
   }
 
-  @mixin bold-title () {
+  @mixin bold-title() {
     font-family: $secondary-font-bold;
     font-size: 1.2em;
   }
@@ -75,7 +75,7 @@ $secondary-font-bold: $monserrat-exbold;
     padding: 14px 50px;
     background-color: $yellow;
     color: $black;
-    font-family: $secondary-font;
+    font-family: $secondary-font, sans-serif;
     font-weight: 800;
     text-transform: uppercase;
   }
@@ -92,8 +92,7 @@ $secondary-font-bold: $monserrat-exbold;
   }
 // box-shadow
   @mixin shadow() {
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
-
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,10.2);
   }
 // Padding Down
   @mixin padding-down() {

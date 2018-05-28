@@ -6,6 +6,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 // Fonts
 
 @font-face {
@@ -25,9 +26,106 @@ a {
   font-family: "Montserrat-ExtraBold";
 }
 
+$primary-font: 'Lato-Regular';
+$font-stack: $primary-font, sans-serif;
+
+$secondary-font: 'Montserrat-Regular', sans-serif;
+$monserrat-exbold: 'Montserrat-ExtraBold';
+$secondary-font-bold: $monserrat-exbold;
+
+// colors
+$yellow: #fbe900;
+$yellow2: #f2da39;
+$blue: #009eff;
+$light-blue: #00a4ff;
+$light-grey: #fdfdfd; //$light-grey
+$black: #030303; // Titles
+
+// Transparent Overlay Colors
+$simple-black: rgb(0, 0, 0);
+$simple-white: rgb(255, 255, 255);
+
+$alpha: .39;
+$alpha2: .44;
+$transparent: rgba($simple-black, $alpha); // not using
+$transparent-white: rgba($simple-white, 0.9); // not using
+
+// Primary Colors
+$primary-color: $yellow;
+$secondary-color: $yellow2;
+
+  //Font Sizes
+  @mixin section-title() {
+    font-size: 2em;
+    font-family: $secondary-font-bold;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 20px;
+  }
+
+  @mixin section-subtitle() {
+    font-size: 2em;
+    font-family: $secondary-font;
+    text-align: center;
+    padding-bottom: 70px;
+  }
+
+  @mixin paragraph() {
+    font-family: $primary-font;
+    font-size: 1em;
+    line-height: 25px;
+  }
+
+  @mixin small-title() {
+    font-size: 1.1em;
+    font-family: $secondary-font, sans-serif;
+    font-weight: 800;
+  }
+
+  @mixin bold-title() {
+    font-family: $secondary-font-bold;
+    font-size: 1.2em;
+  }
+
+  @mixin bg() {
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  @mixin yellow-button() {
+    border-radius: 4px;
+    padding: 14px 50px;
+    background-color: $secondary-color;
+    color: $black;
+    font-family: $secondary-font;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+// Corners
+  @mixin corners-top() {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  @mixin corners-bottom() {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+// box-shadow
+  @mixin shadow() {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+
+  }
+// Padding Down
+  @mixin padding-down() {
+    padding-bottom: 60px;
+  }
 
 body {
-  font-family: "Lato-Regular";
+  font-family: $primary-font;
 }
 
 
@@ -46,13 +144,10 @@ p, li, ul {
 }
 
 .header {
-  width: 100%;
   height: 834px;
-  background: #00a4ff;
+  background: $light-blue;
   color: white;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  @include bg();
   background-attachment: fixed;
   position: relative;
   z-index: 1;
@@ -64,14 +159,14 @@ p, li, ul {
     width: 100%;
     height: 100%;
     content: '';
-    background-color: rgba(0, 0, 0, 0.44);
+    background-color: rgba(0, 0, 0, $alpha2);
     z-index: -1;
   }
 }
 
 .header__top {
-  background-color: rgba(0, 0, 0, 0.39);
-  font-family: "Montserrat-Regular", sans-serif;
+  background-color: rgba(0, 0, 0, $alpha);
+  font-family: $secondary-font, sans-serif;
   padding-top: 25px;
   padding-bottom: 0px;
   transition: padding-top 0.5s, padding-bottom 0.5s;
@@ -84,7 +179,7 @@ p, li, ul {
   padding-bottom: 20px;
   padding-left: 10px;
   i {
-    color: #fbe900;
+    color: $yellow;
     font-size: 1.5em;
   }
 }
@@ -116,7 +211,7 @@ p, li, ul {
 }
 
 .header__top__up__lang__item:first-child {
-  color: #fbe900;
+  color: $primary-color;
 }
 
 hr {
@@ -142,7 +237,7 @@ hr {
 
 .header__top__down__logo h2 {
   font-size: 2em;
-  font-family: "Montserrat-ExtraBold";
+  font-family: $monserrat-exbold;
   font-weight: 300;
 }
 
@@ -162,7 +257,7 @@ hr {
   letter-spacing: 1px;
   &:hover a {
     padding-bottom: 25px;
-    border-bottom: 3px solid #fbe900;
+    border-bottom: 3px solid $primary-color;
   }
   &:last-child {
     padding-right: 0px;
@@ -182,14 +277,14 @@ hr {
 
 .header__content__title {
   font-size: 3em;
-  font-family: "Montserrat-ExtraBold";
+  font-family: $monserrat-exbold;
   text-transform: uppercase;
   margin-bottom: 30px;
 }
 
 .header__content__subtitle {
   font-size: 2em;
-  font-family: "Montserrat-ExtraBold";
+  font-family: $monserrat-exbold;
   font-weight: 100;
   text-transform: uppercase;
   margin-bottom: 40px;
@@ -204,29 +299,25 @@ hr {
 .header__content__button {
   border-radius: 4px;
   padding: 14px 50px;
-  background-color: #fbe900;
-  color: #030303;
-  font-family: "Montserrat-Regular", sans-serif;
+  background-color: $primary-color;
+  color: $black;
+  font-family: $secondary-font, sans-serif;
   font-weight: 800;
   text-transform: uppercase;
 }
 
 .main__service {
   width: 100%;
-  background-color: #fdfdfd;
+  background-color: $light-grey;
 }
 
 .main__service__title {
-  font-size: 2em;
-  font-family: "Montserrat-ExtraBold";
-  text-align: center;
-  padding-top: 80px;
-  padding-bottom: 20px;
+  @include section-title();
 }
 
 .main__service__subtitle {
   font-size: 2em;
-  font-family: "Montserrat-Regular", sans-serif;
+  font-family: $secondary-font, sans-serif;
   text-align: center;
   padding-bottom: 70px;
 }
@@ -259,35 +350,28 @@ hr {
 .main__service__item {
   display: flex;
   justify-content: flex-start;
-  padding-bottom: 60px;
+  @include padding-down();
   width: 100%;
   height: 100%;
   i {
     float: left;
     font-size: 3em;
-    color: #009eff;
+    color: $blue;
     padding-right: 40px;
   }
   h3 {
-    font-size: 1.1em;
-    font-family: "Montserrat-Regular", sans-serif;
-    font-weight: 800;
+    @include small-title();
     padding-bottom: 15px;
   }
   p {
-    font-family: "Lato-Regular";
-    font-size: 1em;
-    line-height: 25px;
+    @include paragraph();
     justify-content: center;
   }
 }
 
 .main__blog {
-  width: 100%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background: #fdfdfd;
+  @include bg();
+  background: $light-grey;
   /* background-image: url(../img/blog/bg_1600.jpg); */
   background-attachment: fixed;
   padding-bottom: 130px;
@@ -295,7 +379,7 @@ hr {
   z-index: 1;
   &::after {
     content: '';
-    background-color: #fdfdfd;
+    background-color: $light-grey;
     opacity: 0.5;
     top: 0;
     left: 0;
@@ -319,8 +403,7 @@ hr {
   margin-bottom: 0px;
   img {
     width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    @include corners-top();
     z-index: 1;
   }
   &::after {
@@ -331,11 +414,9 @@ hr {
     z-index: -1;
     content: 'a';
     width: 100%;
-    background-color: #fdfdfd;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    background-color: $light-grey;
+    @include corners-top();
+    @include corners-bottom();
   }
   .main__blog__post__content {
     margin-top: -2px;
@@ -343,8 +424,7 @@ hr {
     text-align: center;
     padding-top: 55px;
     padding-bottom: 45px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    @include corners-bottom();
     position: relative;
     height: auto;
     .blog__post__date {
@@ -359,9 +439,9 @@ hr {
       padding-top: 15px;
       padding-bottom: 15px;
       border-radius: 4px;
-      background-color: #fbe900;
-      color: #030303;
-      font-family: "Montserrat-Regular", sans-serif;
+      background-color: $primary-color;
+      color: $black;
+      font-family: $secondary-font, sans-serif;
       font-weight: 800;
       text-transform: uppercase;
       span {
@@ -370,7 +450,7 @@ hr {
     }
   }
   h3 {
-    font-family: "Montserrat-ExtraBold";
+    font-family: $monserrat-exbold;
     font-size: 1.2em;
     margin-bottom: 25px;
   }
@@ -380,14 +460,11 @@ hr {
 }
 
 .main__contacts {
-  background-color: #fdfdfd;
+  background-color: $light-grey;
 }
 
 .main__contacts__top {
-  width: 100%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  @include bg();
   height: 360px;
   background-image: url(../img/contacts/bg_1600.jpg);
   border-bottom-left-radius: 20%;
@@ -396,7 +473,7 @@ hr {
   position: relative;
   i {
     text-align: center;
-    color: #fbe900;
+    color: $primary-color;
     font-size: 10vw;
     position: absolute;
     bottom: -15px;
@@ -406,7 +483,7 @@ hr {
 
 .main__contacts__title {
   font-size: 2em;
-  font-family: "Montserrat-ExtraBold";
+  font-family: $monserrat-exbold;
   text-align: center;
   padding-top: 80px;
   padding-bottom: 20px;
@@ -414,10 +491,7 @@ hr {
 }
 
 .main__contacts__subtitle {
-  font-size: 2em;
-  font-family: "Montserrat-Regular", sans-serif;
-  text-align: center;
-  padding-bottom: 70px;
+  @include section-subtitle();
   color: white;
 }
 
@@ -463,12 +537,8 @@ hr {
 }
 
 .main__offers__top {
-  width: 100%;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  /* background-color: #00a4ff; */
-  background-size: cover;
+  @include bg();
+  /* background-color: $light-blue; */
   /* background-image: url(../img/offers/bg_1600_img.jpg); */
   position: relative;
   z-index: 1;
@@ -480,7 +550,7 @@ hr {
     /* bottom: 0; */
     /* top: 95%; */
     z-index: -1;
-    background-color: #00a4ff;
+    background-color: $light-blue;
   }
 }
 
@@ -508,71 +578,57 @@ hr {
     display: block;
     width: 100%;
     height: 100%;
-    background-color: #fdfdfd;
+    background-color: $light-grey;
     content: '';
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    @include corners-top();
+    @include corners-bottom();
   }
   img {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    box-shadow: 0 9px 0px 0px #fdfdfd, 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    @include corners-top();
+    box-shadow: 0 9px 0px 0px $light-grey, 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
     width: 100%;
   }
   .card__body {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    @include shadow();
     margin-top: -2px;
     padding-top: 20px;
     padding-bottom: 25px;
     padding-left: 5%;
     padding-right: 5%;
-    /* background-color: #fdfdfd; */
+    background-color: $light-grey;
     text-align: center;
-    color: #030303;
+    color: $black;
     height: 100%;
   }
   .card__trip__duration {
-    font-family: "Montserrat-Regular", sans-serif;
+    font-family: $secondary-font, sans-serif;
     font-weight: 500;
     font-size: 1.2em;
   }
   .card__city__destination {
-    font-size: 1.1em;
-    font-family: "Montserrat-Regular", sans-serif;
-    font-weight: 800;
-    font-family: "Montserrat-ExtraBold";
+    @include small-title();
+    font-family: $monserrat-exbold;
     font-weight: 500;
     font-size: 1.5em;
     padding: 15px 0px;
   }
   .card__trip__price {
-    font-family: "Montserrat-ExtraBold";
-    font-size: 1.2em;
+    @include bold-title();
     font-size: 1.8em;
     font-weight: 500;
     padding: 15px 0px;
   }
   .card__purchase__button {
-    border-radius: 4px;
-    padding: 14px 50px;
-    background-color: #fbe900;
-    color: #030303;
-    font-family: "Montserrat-Regular", sans-serif;
-    font-weight: 800;
-    text-transform: uppercase;
-    background-color: #f2da39;
+    @include yellow-button();
     padding: 14px 0px;
     margin: 0 auto;
     width: 65%;
     &:hover {
-      background-color: #fbe900;
+      background-color: $primary-color;
     }
   }
   .card__body {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    @include corners-bottom();
   }
 }
 
@@ -581,9 +637,8 @@ hr {
   z-index: 2;
   position: relative;
   img {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    box-shadow: 0 9px 0px 0px #fdfdfd, 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    @include corners-top();
+    box-shadow: 0 9px 0px 0px $light-grey, 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
     width: 100%;
   }
   .card__body {
@@ -593,50 +648,40 @@ hr {
     padding-bottom: 25px;
     padding-left: 5%;
     padding-right: 5%;
-    background-color: #fdfdfd;
+    background-color: $light-grey;
     text-align: center;
-    color: #030303;
+    color: $black;
   }
   .card__trip__duration {
-    font-family: "Montserrat-Regular", sans-serif;
+    font-family: $secondary-font, sans-serif;
     font-weight: 500;
     font-size: 1.2em;
   }
   .card__city__destination {
     font-size: 1.1em;
-    font-family: "Montserrat-Regular", sans-serif;
-    font-weight: 800;
-    font-family: "Montserrat-ExtraBold";
+    font-family: $monserrat-exbold;
     font-weight: 500;
     font-size: 1.5em;
     padding: 15px 0px;
   }
   .card__trip__price {
-    font-family: "Montserrat-ExtraBold";
+    font-family: $monserrat-exbold;
     font-size: 1.2em;
     font-size: 1.8em;
     font-weight: 500;
     padding: 15px 0px;
   }
   .card__purchase__button {
-    border-radius: 4px;
-    padding: 14px 50px;
-    background-color: #fbe900;
-    color: #030303;
-    font-family: "Montserrat-Regular", sans-serif;
-    font-weight: 800;
-    text-transform: uppercase;
-    background-color: #f2da39;
+    @include yellow-button();
     padding: 14px 0px;
     margin: 0 auto;
     width: 65%;
     &:hover {
-      background-color: #fbe900;
+      background-color: $primary-color;
     }
   }
   .card__body {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    @include corners-bottom();
   }
   &::after {
     position: absolute;
@@ -646,19 +691,18 @@ hr {
     bottom: -48px;
     -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
     clip-path: polygon(100% 0, 0 0, 50% 100%);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    @include corners-bottom();
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
-    background-color: #fdfdfd;
-    color: #fdfdfd;
+    background-color: $light-grey;
+    color: $light-grey;
     content: 'manov.ru';
   }
 }
 
 .main__offers__down {
-  background-color: #00a4ff;
+  background-color: $light-blue;
   height: 20%;
 }
 
@@ -683,7 +727,7 @@ hr {
   }
   a:hover {
     transition: color 0.3s;
-    color: #fdfdfd;
+    color: $light-grey;
   }
 }
 
@@ -798,7 +842,7 @@ hr {
   }
   .main__blog {
     height: auto;
-    padding-bottom: 60px;
+    @include padding-down();
   }
   .main__blog__posts {
     flex-wrap: wrap;
