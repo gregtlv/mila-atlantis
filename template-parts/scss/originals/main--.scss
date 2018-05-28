@@ -1,0 +1,940 @@
+ul {
+  list-style: none;
+}
+a {
+  text-decoration:  none;
+  color: inherit;
+}
+
+// Fonts
+
+@font-face {
+  src: url("./fonts/Montserrat-Regular.otf");
+  font-family: "Montserrat-Regular";
+}
+
+@font-face {
+  src: url("./fonts/Lato-Regular.ttf");
+  font-family: "Lato-Regular";
+}
+
+@font-face {
+  src: url("./fonts/Montserrat-ExtraBold.otf");
+  font-family: "Montserrat-ExtraBold";
+}
+
+$primary-font: 'Lato-Regular';
+$font-stack: $primary-font, sans-serif;
+
+$secondary-font: 'Montserrat-Regular', sans-serif;
+$monserrat-exbold: 'Montserrat-ExtraBold';
+$secondary-font-bold: $monserrat-exbold;
+
+  //Font Sizes
+  @mixin section-title() {
+    font-size: 2em;
+    font-family: $secondary-font-bold;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 20px;
+  }
+
+  @mixin section-subtitle() {
+    font-size: 2em;
+    font-family: $secondary-font;
+    text-align: center;
+    padding-bottom: 70px;
+  }
+
+  @mixin paragraph() {
+    font-family: $primary-font;
+    font-size: 1em;
+    line-height: 25px;
+  }
+
+  @mixin small-title () {
+    font-size: 1.1em;
+    font-family: $secondary-font;
+    font-weight: 800;
+  }
+
+  @mixin bold-title () {
+    font-family: $secondary-font-bold;
+    font-size: 1.2em;
+  }
+
+  @mixin bg() {
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  @mixin yellow-button() {
+    border-radius: 4px;
+    padding: 14px 50px;
+    background-color: $yellow;
+    color: $black;
+    font-family: $secondary-font;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+// Corners
+  @mixin corners-top() {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  @mixin corners-bottom() {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+// box-shadow
+  @mixin shadow() {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+
+  }
+// Padding Down
+  @mixin padding-down() {
+    padding-bottom: 60px;
+  }
+// Card Offers
+  @mixin card-offer() {
+    img {
+      @include corners-top();
+      box-shadow: 0 9px 0px 0px $light-grey,
+      0 3px 1px -2px rgba(0,0,0,0.12),
+      0 1px 5px 0 rgba(0,0,0,0.2);
+
+      width: 100%;
+
+    }
+    .card__body {
+      @include shadow();
+      margin-top: -2px;
+
+      padding-top: 20px;
+      padding-bottom: 25px;
+      padding-left: 5%;
+      padding-right: 5%;
+
+      background-color: $light-grey;
+      text-align: center;
+      color: $black;
+
+
+    }
+
+    .card__trip__duration {
+      font-family: $secondary-font;
+      font-weight: 500;
+      font-size: 1.2em; //Поменять на резиновые значения
+    }
+
+    .card__city__destination {
+      @include small-title();
+      font-family: $secondary-font-bold;
+      font-weight: 500;
+      font-size: 1.5em;
+      padding: 15px 0px; //Поменять на резиновые значения
+    }
+
+    .card__trip__description {
+      // font-weight: 500;
+    }
+
+    .card__trip__price {
+      @include bold-title();
+      font-size: 1.8em; //Поменять на резиновые значения
+      font-weight: 500;
+      padding: 15px 0px;
+    }
+
+    .card__purchase__button {
+      @include yellow-button();
+      background-color: $yellow2;
+      padding: 14px 0px;
+      margin: 0 auto;
+      width: 65%
+    }
+    .card__purchase__button:hover {
+      background-color: $yellow;
+    }
+  }
+
+  //End of Card
+
+
+// colors
+$yellow: #fbe900;
+$yellow2: #f2da39;
+$blue: #009eff;
+$light-blue: #00a4ff;
+$light-grey: #fdfdfd; //#fdfdfd
+$black: #030303; // Titles
+
+// Transparent Overlay Colors
+$simple-black: rgb(0, 0, 0);
+$simple-white: rgb(255, 255, 255);
+
+$alpha: .39;
+$alpha2: .44;
+$transparent: rgba($simple-black, $alpha);
+$transparent-white: rgba($simple-white, 0.9);
+
+// Primary Colors
+$primary-color: #fbe900;
+
+// Generals
+body {
+  font-family: $primary-font;
+}
+
+a {
+  text-decoration: none;
+}
+p, li, ul {
+  margin: 0;
+  padding: 0;
+}
+// Container
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+// Header
+
+.header {
+  width: 100%;
+  height: 834px;
+  background: $light-blue;
+  color: $simple-white;
+
+  background-image: url(../img/header/bg_1600.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  position: relative;
+  z-index: 1;
+
+  transition: padding-bottom 0.3s;
+
+}
+  .header::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba($simple-black, $alpha2);;
+    z-index: -1;
+  }
+
+  .header__top {
+    background-color: $transparent;
+    font-family: $secondary-font;
+    padding-top: 25px;
+    padding-bottom: 0px;
+    transition: padding-top 0.5s, padding-bottom 0.5s;
+  }
+
+  .header__top__up {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    // z-index: 2;
+  }
+
+
+    // Header Top Up Items and Icons
+    .header__top__up i {
+      color: $yellow;
+      font-size: 1.5em;
+    }
+
+    .header__top__up__contact__item,
+    .header__top__up__social__item,
+    .header__top__up__lang__item {
+      display: inline-block;
+      font-size: 1em;
+    }
+
+    // Header Contacts header__top__up__contacts
+    .header__top__up__contacts {
+      display: flex;
+      justify-content: space-between;
+      width: 45%;
+    }
+
+      .header__top__up__contact__item {
+      }
+
+        .header__top__up__contact__item__text {
+          vertical-align: text-top;
+        }
+
+        .header__top__up__contact__item i {
+          padding-right: 5px;
+        }
+
+
+    // Header Social header__top__up__social__item
+    .header__top__up__social__item {
+      padding-right: 10px;
+      &:last-child {
+        padding-right: 0px;
+      }
+    }
+
+    // Header Languages
+    .header__top__up__lang__item:first-child {
+      color: $yellow;
+    }
+    hr {
+      width: 100%;
+      border: none;
+      background-color: $transparent-white;
+      color: $transparent-white;
+      height: 3px;
+      margin: 0px;
+      padding: 0px;
+    }
+    .lang__toggle,
+    .row__up__toggle {
+      display: none;
+    }
+
+
+  // Header Top Down
+  .header__top__down {
+    padding: 20px 10px 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header__top__down__logo {
+    h2 {
+      font-size: 2em;
+      font-family: $monserrat-exbold;
+      font-weight: 300;
+    }
+  }
+
+  // Header Navigation
+  .header__top__down__nav {
+    // width: 50%;
+  }
+
+  .header__top__down__nav__list {
+    // display: flex;
+    // justify-content: space-between;
+    // width: 100%;
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+  .header__toggle {
+    display: none;
+  }
+  .header__top__down__nav__item {
+    display: inline-block;
+    text-transform: uppercase;
+    padding-right: 15px;
+
+    // font-weight: 100;
+    letter-spacing: 1px;
+    // padding-bottom: 15px;
+  }
+
+    .header__top__down__nav__item:hover a {
+      padding-bottom: 25px;
+      border-bottom: 3px solid $yellow;
+    }
+
+  .header__top__down__nav__item:last-child {
+    padding-right: 0px;
+  }
+
+  .header__top__down__nav__item a {
+    text-decoration: none;
+    color: $simple-white;
+  }
+
+  // Header content
+  .header__content {
+    padding-top: 14%;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+    .header__content__title {
+      font-size: 3em;
+      font-family: $monserrat-exbold;
+      text-transform: uppercase;
+      margin-bottom: 30px; //Поменять на резиновые значения
+    }
+
+    .header__content__subtitle {
+      font-size: 2em;
+      font-family: $monserrat-exbold;
+      font-weight: 100;
+      text-transform: uppercase;
+      margin-bottom: 40px; //Поменять на резиновые значения
+    }
+
+    .header__content__text {
+      margin: 0 auto;
+      width: 75%;
+      margin-bottom: 50px;
+    }
+
+    .header__content__button {
+      @include yellow-button();
+    }
+// end of Header
+
+// Main
+
+  // Service
+
+  .main__service {
+    width: 100%;
+    background-color: $light-grey;
+  }
+
+    .main__service__title {
+      @include section-title();
+    }
+
+    .main__service__subtitle {
+      @include section-subtitle();
+    }
+
+    .main__service__items {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0 auto;
+    }
+      .main__service__list__left {
+      }
+
+      .main__service__list__left,
+      .main__service__list__right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // background-color: purple;
+        width: 47%;
+      }
+
+      .main__service__item {
+        display: flex;
+        padding-bottom: 60px; //Возможно поменять на %
+          i {
+            float: left;
+            font-size: 3em;
+            color: $blue;
+            padding-right: 40px;
+          }
+          h3 {
+            @include small-title();
+            padding-bottom: 15px;
+          }
+          p {
+            @include paragraph();
+          }
+      }
+      .main__service__item__content p {
+      }
+
+  // Blog
+
+  .main__blog {
+    @include bg();
+     // height: 820px;Поменять на что то другое может %
+
+    background: $light-grey;
+    background-image: url(../img/blog/bg_1600.jpg);
+    background-attachment: fixed;
+
+  }
+
+    .main__blog__posts {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+
+    .main__blog__post {
+      max-width: 32%;
+      img {
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+      .main__blog__post__content {
+        margin-top: -2px;
+        background-color: $simple-white;
+        text-align: center;
+        padding-top: 55px;
+        padding-bottom: 45px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        position: relative;
+        .blog__post__date {
+          padding-bottom: 15px;
+        }
+        .post__button {
+
+          position: absolute;
+          top: -20px;
+          width: 50%;
+          height: 15px;
+          left: 25%;
+          padding-top: 15px;
+          padding-bottom: 15px;
+
+          border-radius: 4px;
+          background-color: $yellow;
+          color: $black;
+          font-family: $secondary-font;
+          font-weight: 800;
+          text-transform: uppercase;
+
+          span {
+            font-size: 1em;
+          }
+        }
+      }
+      h3 {
+        @include bold-title();
+        margin-bottom: 25px;
+      }
+      p {
+        line-height: 25px;
+      }
+    }
+    // End of Blog
+
+
+    //Contacts
+
+    .main__contacts {
+      background-color: $light-grey;
+
+    }
+
+    .main__contacts__top {
+      @include bg();
+      height: 360px;
+      background-image: url(../img/contacts/bg_1600.jpg);
+      // background-attachment: fixed;
+      border-bottom-left-radius: 20%;
+      border-bottom-right-radius: 20%;
+      text-align: center;
+      position: relative;
+      // margin: 0 auto;
+      i {
+        // margin: 0 auto;
+        text-align: center;
+        color: $yellow;
+        font-size: 10vw;
+        position: absolute;
+        bottom: -15px;
+        right: 45%;
+      }
+    }
+    .main__contacts__title {
+      @include section-title();
+      color: $simple-white;
+    }
+    .main__contacts__subtitle {
+      @include section-subtitle();
+      color: $simple-white;
+    }
+
+    .main__contacts__bottom {
+      margin-top: 80px;
+      color: #262626;
+
+    }
+
+    .main__contacts__bottom__list {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 130px;
+      flex-wrap: wrap;
+    }
+
+    .main__contacts__item {
+      // width: 30%;
+      display: flex;
+      // justify-content: space-between;
+      i {
+        font-size: 3em;
+        margin-right: 25px; //Поменять на что-то другое
+      }
+    }
+
+    .main__contacts__item__content {
+      h3 {
+        text-transform: uppercase;
+        font-family: $primary-font;
+        font-weight: 600;
+        padding-bottom: 20px;
+      }
+
+      p {
+        line-height: 25px;
+      }
+    }
+
+    .main__contacts__messenger__icons {
+      i {
+        font-size: 1.5em
+      }
+
+    }
+    // End of Contacts
+
+    // Offers main__offers
+
+    .main__offers {
+      padding-bottom: 145px;
+    }
+
+      .main__offers__top {
+        @include bg();
+        background-color: $light-blue;
+        // height: 50%;
+        background-size: cover;
+        background-image: url(../img/offers/bg_1600_img.jpg);
+        position: relative;
+        z-index: 1;
+      }
+      .main__offers__top::after {
+        content: '';
+        position: absolute;
+        height: 20%;
+        width: 100%;
+        top: 95%;
+        z-index: -1;
+        background-color: $light-blue;
+      }
+
+      .main__offers__cards {
+        width: 100%;
+
+      }
+
+      .main__offers__cards__list {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+        align-items: center;
+        flex-wrap: nowrap;
+
+      }
+
+      .offers__card {
+        flex-basis: 35%;
+        @include card-offer();
+        .card__body {
+          @include corners-bottom();
+        }
+      }
+
+      .offers__card__center {
+        flex-basis: 45%;
+        @include card-offer();
+        .card__body {
+          @include corners-bottom();
+        }
+
+        z-index: 2;
+        position: relative;
+      }
+      .offers__card__center::after {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        height: 50px;
+        bottom: -48px;
+
+        -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
+        clip-path: polygon(100% 0, 0 0, 50% 100%);
+
+        @include corners-bottom();
+        @include shadow();
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+
+        background-color: $light-grey;
+        color: $light-grey;
+
+        content:'manov.ru';
+
+      }
+
+      .main__offers__down {
+        background-color: $light-blue;
+        height: 20%;
+        // content: '';
+      }
+
+    // End of Offers
+
+// End of Main
+
+// Footer
+
+  .footer {
+    background-color: $yellow;
+    height: 180px;
+
+    text-align: center;
+
+    p {
+      padding-top: 50;
+    }
+  }
+
+  .footer__social__icons {
+    margin-top: 20px;
+    li {
+      display: inline-block;
+      padding: 0 10px;
+      margin: 0 auto;
+    }
+    i {
+      font-size: 2em;
+    }
+    a:hover {
+      transition: color 0.3s;
+      color: $light-grey;
+    }
+
+  }
+
+// End of Footer
+
+// Media Queries
+
+// 1010
+@media screen and (max-width: 1010px) {
+  .header__top__up__contacts {
+    width: 50%;
+  }
+
+  .header__top__up__contacts {
+    width: 50%;
+  }
+}
+
+// 768
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  .header__top__up__contacts {
+    width: 60%;
+  }
+}
+
+
+//Mobile
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+  // RU
+
+    // Header
+
+    // Header Contacts
+    .header__top__up__contacts {
+      justify-content: flex-start;
+      width: 35%;
+    }
+
+    .header__top__up__contact__item i {
+      padding-right: 10px;
+    }
+    .header__top__up__contact__item__text {
+      display: none;
+    }
+    // Header Social
+      .header__top__up__social {
+        // display: none;
+      }
+
+      .header__top__up__social__item {
+        padding-right: 7px;
+        &:last-child {
+          padding-right: 0px;
+        }
+        .fa-telegram {
+          display: none;
+        }
+      }
+
+    // Lang
+    .header__top__up__lang {
+      display: none;
+      text-align: right;
+    }
+    .lang__toggle {
+      display: block;
+    }
+
+    //Navigation
+    .header__top__down__nav {
+      text-align: right;
+      position: relative;
+    }
+    .header__top__down__nav__item:hover a {
+      padding-bottom: 0px;
+    }
+    .header__top__down__nav__list {
+      display: none;
+      position: absolute;
+      right: 0px;
+      opacity: 0;
+      transition: opacity 0.5s;
+
+      .header__top__down__nav__item {
+        display: block;
+        padding-top: 10px;
+      }
+      li {
+        padding-right: 0px;
+      }
+    }
+
+    .header__toggle {
+      display: block;
+      font-size: 6vw;
+      margin-bottom: 10px;
+    }
+
+    .row__up__toggle {
+      font-size: 6vw;
+      margin-bottom: 10px;
+    }
+
+    // End Of Header
+
+
+    // Main
+
+    // Offers
+    .offers__card {
+      flex-basis: 100%;
+    }
+
+    .offers__card__center {
+      flex-basis: 100%;
+      margin-top: 20px;
+      margin-bottom: 70px;
+    }
+
+    .main__offers__cards__list {
+      flex-wrap: wrap;
+    }
+
+    .main__offers__top::after {
+      height: 8%;
+      z-index: -1;
+    }
+
+    .main__offers {
+      padding-bottom: 50px;
+    }
+
+    // Services
+
+    .main__service__item__content {
+      display: none;
+      padding: 0px;
+    }
+
+    .main__service__list__left:first-child {
+
+    }
+
+    .main__service__item {
+      padding-bottom: 34px;
+
+      i {
+        padding: 0px;
+        // margin-bottom: -50px;
+      }
+    }
+
+    //Posts
+    .main__blog {
+      height: auto; //Поменять на что то другое может %
+      @include padding-down();
+    }
+    .main__blog__posts {
+      flex-wrap: wrap;
+    }
+
+    .main__blog__post {
+      max-width: 100%;
+      padding-bottom: 25px;
+      &:last-child {
+        padding-bottom: 0px;
+      }
+    }
+
+    // Contacts
+    .main__contacts__top {
+      height: auto;
+    }
+
+    .main__contacts__bottom__list {
+      padding-bottom: 70px;
+    }
+
+    .main__contacts__item i {
+      text-align: center;
+      margin-right: 5px;
+    }
+    .main__contacts__messenger__icons {
+      // display: none;
+    }
+    .main__contacts__item {
+      margin: 0 auto;
+      // width: 40%;
+      display: block;
+      text-align: center;
+      padding-bottom: 48px;
+      }
+      .item__icon {
+        padding-bottom: 10px;
+      }
+      .main__contacts__item__content h3 {
+        display: none;
+
+    }
+
+
+    // End Of Main
+
+
+}
