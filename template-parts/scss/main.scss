@@ -556,6 +556,9 @@ hr {
 
 .main__offers__cards {
   width: 100%;
+  opacity: 1;
+  transition: all 3s;
+
 }
 
 .main__offers__cards__list {
@@ -730,6 +733,8 @@ hr {
     color: $light-grey;
   }
 }
+
+@import "single.css";
 
 @media screen and (max-width: 1010px) {
   .header__top__up__contacts {

@@ -26,7 +26,7 @@ headerToggle.onclick = function expandMenu() {
 
 }
 
-//Scroll
+// Scroll
 
 $(document).ready(function(){
  $("#headerNav").on("click","a", function (event) {
@@ -43,3 +43,13 @@ $(document).ready(function(){
    $('body,html').animate({scrollTop: top}, 1500);
  });
 });
+
+
+
+
+
+
+
+
+
+

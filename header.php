@@ -21,15 +21,19 @@
 	<?php
 	$temp_parts = get_template_directory_uri() . "/template-parts/" ?>
 
+
 	<link rel="stylesheet" href="<?php echo $temp_parts . 'css/reset.css' ?>">
   <link rel="stylesheet" href="<?php echo $temp_parts . 'css/normalize.css' ?>">
 
 	<link rel="stylesheet" href="<?php echo $temp_parts . 'css/main.css' ?>">
+	
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 
-	<?php
+	<?php 
 	wp_head(); ?>
+
+
 
 </head>
 

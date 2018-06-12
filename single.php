@@ -10,9 +10,8 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="container">
 		<main id="main" class="site-main">
-
 
 		<?php
 		while ( have_posts() ) :
@@ -32,6 +31,8 @@ get_header();
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+
+<!-- <script src="http://localhost:35729/livereload.js"></script> -->
 
 <?php
 get_sidebar();

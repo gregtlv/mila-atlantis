@@ -1,0 +1,40 @@
+//
+// Post's Page
+//
+
+@import "main.scss";
+
+.post__title {
+  @include bold-title();
+  font-size: 2em;
+}
+
+ // Hide Details
+
+.byline,
+.cat-links,
+.screen-reader-text,
+.nav-previous,
+.nav-next,
+.comment-reply-title,
+.comment-form {
+
+  display: none;
+
+}
+
+.post {
+  width: 100%;
+  margin-top: 25px;
+  padding: 15px 25px 15px 25px;
+  @include shadow();
+  @include corners-top();
+  @include corners-bottom();
+}
+
+.entry-content {
+  margin: 25px 0 25px 0;
+
+  text-align: justify;
+  line-height: 23px;
+}
