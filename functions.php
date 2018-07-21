@@ -159,3 +159,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+update_option('siteurl', 'http://localhost:8888/mila-wp');
+update_option('home', 'http://localhost:8888/mila-wp');
+
